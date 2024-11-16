@@ -1,0 +1,255 @@
+Here are all the questions from the provided practical slips, excluding the Viva questions, along with their respective marks:
+
+---
+
+### **Slip 1**
+1. Write an AngularJS script for the addition of two numbers using `ng-init`, `ng-model`, and `ng-bind`. Demonstrate `ng-show`, `ng-disabled`, and `ng-click` directives on the button component. **[15 Marks]**  
+2. Create a Node.js application that reads data from multiple files asynchronously using promises and async/await. **[15 Marks]**
+
+---
+
+### **Slip 2**
+1. Write an AngularJS script to print details of a bank (e.g., bank name, MICR code, IFSC code, address, etc.) in tabular form using `ng-repeat`. **[15 Marks]**  
+2. Create a simple Angular application that fetches data from an API using `HttpClient`. Implement an Observable to fetch data from an API endpoint. **[15 Marks]**
+
+---
+
+### **Slip 3**
+1. Write an AngularJS script to display a list of games stored in an array on a button click using `ng-click`. Demonstrate `ng-init` and `ng-bind` directives of AngularJS. **[15 Marks]**  
+2. Find a company with a workforce greater than 30 in the array (use the find-by-id method). **[15 Marks]**
+
+---
+
+### **Slip 4**
+1. Fetch the details using `ng-repeat` in AngularJS. **[15 Marks]**  
+2. Create an Express.js application to include middleware for parsing request bodies (e.g., JSON, form data) and validating input data. **[15 Marks]**
+
+---
+
+### **Slip 5**
+1. Create a simple Angular component that takes input data and displays it. **[15 Marks]**  
+2. Implement a simple server using Node.js. **[15 Marks]**
+
+---
+
+### **Slip 6**
+1. Develop an Express.js application that defines routes for Create and Read operations on a resource (e.g., products). **[15 Marks]**  
+2. Find a company with a workforce greater than 30 in the array (use the find-by-id method). **[15 Marks]**
+
+---
+
+### **Slip 7**
+1. Create a Node.js application that reads data from multiple files asynchronously using promises and async/await. **[15 Marks]**  
+2. Develop an Express.js application that defines routes for Create and Read operations on a resource (e.g., User). **[15 Marks]**
+
+---
+
+### **Slip 8**
+1. Create a simple Angular application that fetches data from an API using `HttpClient`. Implement an Observable to fetch data from an API endpoint. **[15 Marks]**  
+2. Develop an Express.js application that defines routes for Create and Update operations on a resource (e.g., Employee). **[15 Marks]**
+
+---
+
+### **Slip 9**
+1. Find a company with a workforce greater than 30 in the array (use the find-by-id method). **[15 Marks]**  
+2. Create an Express.js application to include middleware for parsing request bodies (e.g., JSON, form data) and validating input data. Send appropriate JSON responses for success and error cases. **[15 Marks]**
+
+---
+
+### **Slip 10**
+1. Implement a simple server using Node.js. **[15 Marks]**  
+2. Extend the previous Express.js application to include middleware for parsing request bodies (e.g., JSON, form data) and validating input data. Send appropriate JSON responses for success and error cases. **[15 Marks]**
+
+---
+
+### **Slip 11**
+1. Develop an Express.js application that defines routes for Create operations on a resource (e.g., Movie). **[15 Marks]**  
+2. Create an Angular application that prints the names of students who play basketball using the `filter` and `map` methods. **[15 Marks]**
+
+---
+
+### **Slip 12**
+1. Write an AngularJS script to print details of an Employee (e.g., employee name, employee ID, pin code, address, etc.) in tabular form using `ng-repeat`. **[15 Marks]**  
+2. Develop an Express.js application that defines routes for Create operations on a resource (e.g., User). **[15 Marks]**
+
+---
+
+### **Slip 13**
+1. Extend the previous Express.js application to include middleware for parsing request bodies (e.g., JSON, form data) and validating input data. Send appropriate JSON responses for success and error cases. **[15 Marks]**  
+2. Create a simple Angular component that takes input data and displays it. **[15 Marks]**
+
+---
+
+### **Slip 14**
+1. Create an Angular application that prints the names of students who got 85% using the `filter` and `map` methods. **[15 Marks]**  
+2. Develop an Express.js application that defines routes for Create and Update operations on a resource (e.g., Employee). **[15 Marks]**
+
+---
+
+### **Slip 15**
+1. Find an employee with a salary greater than 25,000 in the array (use the find-by-id method). **[15 Marks]**  
+2. Create an Angular application that prints the names of students who got 85% using the `filter` and `map` methods. **[15 Marks]**
+
+--- 
+
+Let me know if you'd like assistance with any of these!
+
+slip 1
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdditionApp</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="">
+    <div ng-init="num1=0; num2=0; sum=0">
+        <h2>AngularJS Addition</h2>
+        <p>Enter Number 1: <input type="number" ng-model="num1"></p>
+        <p>Enter Number 2: <input type="number" ng-model="num2"></p>
+        <button ng-click="sum=num1+num2" ng-disabled="!num1 || !num2">Add</button>
+        <p>Sum: <span ng-bind="sum"></span></p>
+
+        <!-- Demonstrating Directives -->
+        <button ng-show="sum > 0">Sum calculated successfully!</button>
+    </div>
+</body>
+</html>
+
+
+Q2.
+
+
+
+const fs = require('fs/promises');
+
+async function readFiles() {
+    try {
+        const fileNames = ['file1.txt', 'file2.txt', 'file3.txt']; // Replace with actual file names
+        const fileContents = await Promise.all(fileNames.map(file => fs.readFile(file, 'utf-8')));
+        console.log("Contents of all files:");
+        fileContents.forEach((content, index) => {
+            console.log(`File ${index + 1}:`, content);
+        });
+    } catch (error) {
+        console.error("Error reading files:", error.message);
+    }
+}
+
+readFiles();
+
+
+
+fetch-api-example/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── data-fetch/
+│   │   │   │   ├── data-fetch.component.ts
+│   │   │   │   ├── data-fetch.component.html
+│   │   │   │   └── data-fetch.component.css
+│   │   ├── services/
+│   │   │   └── data-fetch.service.ts
+│   │   ├── app.module.ts
+│   │   └── app.component.ts
+│   ├── app.component.html  <!-- Used to render the DataFetchComponent -->
+└── package.json
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Here's a simple explanation of the difference between **Angular**, **Node.js**, and **Express.js**, along with real-time examples to help you understand their roles and how they are used.
+
+---
+
+### **1. Angular**
+- **What it is:** Angular is a **front-end framework** used to build **client-side** web applications. It runs in the browser and is responsible for creating dynamic and interactive user interfaces.
+- **Key Role:** Manages what the user sees and interacts with on a webpage.
+- **Tech Stack Position:** **Front-end**.
+
+#### **Real-Time Example:**
+Imagine an e-commerce website like **Amazon**:
+- **Angular's Role:** The search bar, product catalog, shopping cart, and user profile that you interact with on the webpage are all managed by Angular. When you click on a product, Angular updates the display dynamically without needing to reload the page.
+
+---
+
+### **2. Node.js**
+- **What it is:** Node.js is a **runtime environment** that allows JavaScript to run on the **server-side**. It handles tasks like processing data, reading/writing to databases, and responding to API requests.
+- **Key Role:** Executes server-side code and powers the back-end logic of web applications.
+- **Tech Stack Position:** **Back-end runtime environment**.
+
+#### **Real-Time Example:**
+For the same e-commerce website:
+- **Node.js's Role:** When you search for a product, Node.js fetches the list of matching products from the database and sends them back to Angular to display.
+
+---
+
+### **3. Express.js**
+- **What it is:** Express.js is a **framework built on Node.js**. It simplifies creating web servers and APIs, making it easier to handle requests (like GET, POST) and responses.
+- **Key Role:** Provides tools and features to build robust back-end APIs.
+- **Tech Stack Position:** **Back-end framework**.
+
+#### **Real-Time Example:**
+For the same e-commerce website:
+- **Express.js's Role:** It creates the API endpoints, such as `/search`, `/add-to-cart`, or `/checkout`. When Angular makes a request to "search for laptops," Express.js routes that request to the right logic in Node.js to fetch data from the database.
+
+---
+
+### **Summary of Roles with an Analogy:**
+
+Think of a restaurant:
+
+| **Technology**    | **Role in Web Development**                          | **Role in Restaurant**                               |
+|--------------------|------------------------------------------------------|-----------------------------------------------------|
+| **Angular**        | Builds the front-end (what users see and interact with). | The waiter who presents the menu and takes orders. |
+| **Node.js**        | Runs the server-side code to process the data and handle requests. | The kitchen where the orders are prepared.         |
+| **Express.js**     | Provides routes and APIs to handle specific requests. | The supervisor who ensures orders go to the correct chef. |
+
+---
+
+### **End-to-End Real-Time Example:**
+#### **Scenario:** Searching for "laptops" on an e-commerce website.
+
+1. **Angular (Front-End):**
+   - You type "laptops" into the search bar and press Enter.
+   - Angular sends the search query (`"laptops"`) to the server using an API call.
+
+2. **Express.js (API):**
+   - Express.js receives the request at an endpoint like `/search`.
+   - It routes the request to the appropriate function in the server.
+
+3. **Node.js (Back-End):**
+   - Node.js executes the logic to query the database for products matching `"laptops"`.
+   - It processes the result and sends the list of products back to Angular via the API.
+
+4. **Angular (Front-End):**
+   - Angular displays the search results dynamically without refreshing the page.
+
+---
+
+### **Comparison Table:**
+
+| **Feature**        | **Angular**                     | **Node.js**                     | **Express.js**                     |
+|---------------------|----------------------------------|----------------------------------|------------------------------------|
+| **Purpose**         | Build dynamic web interfaces.   | Run JavaScript on the server.    | Simplify building APIs on Node.js. |
+| **Type**            | Front-end framework             | Back-end runtime environment     | Back-end framework                 |
+| **Example Role**    | Display products to users.      | Fetch product data from DB.      | Create API endpoints for products. |
+| **Where it Runs**   | In the browser (client-side).   | On the server (back-end).        | On the server (back-end).          |
+| **Key Language**    | TypeScript (JavaScript-based).  | JavaScript                      | JavaScript                         |
+
+---
+
+### **Conclusion:**
+- Use **Angular** for building **what users see** (user interface).
+- Use **Node.js** for **server-side logic** (processing requests, fetching data).
+- Use **Express.js** for building **APIs** and handling web server functionality.
+
+Together, they form a powerful stack for full-stack JavaScript development (like the **MEAN** or **MERN** stack).
+
+
+
+
